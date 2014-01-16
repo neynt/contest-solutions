@@ -1,7 +1,7 @@
 # Contest solutions
 
-I enjoy solving computer programming problems. Here are some of my solutions.
+My solutions to computer programming problems.
 
-## CCC
+## [CCC](http://www.cemc.uwaterloo.ca/contests/computing.html)
 
 The Canadian Computing Competition, a yearly competition for high school students run by the University of Waterloo.
