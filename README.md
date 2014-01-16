@@ -1,6 +1,6 @@
 # Contest solutions
 
-My solutions to computer programming problems.
+My solutions to programming contest problems.
 
 ## [CCC](http://www.cemc.uwaterloo.ca/contests/computing.html)
 
