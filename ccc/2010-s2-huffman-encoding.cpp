@@ -8,9 +8,9 @@ int main ()
     int k;
     string seq, chr, line;
 
+    // Get input
     cin >> k;
     map<string, string> code;
-
     for (int i=0; i<k; i++)
     {
         cin >> chr >> seq;
@@ -18,6 +18,7 @@ int main ()
     }
     cin >> line;
 
+    // Greedily match the sequences
     seq.clear();
     for (int i=0; i<line.length(); i++)
     {
