@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Declare and populate a dictionary of translations.
 #
 # A dictionary (a.k.a. associative array, map) is a python object

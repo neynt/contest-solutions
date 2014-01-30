@@ -1,3 +1,5 @@
+#!/usr/bin/env/python3
+
 # Get input
 num_houses = int(input())
 houses = [int(input()) for i in range(num_houses)]

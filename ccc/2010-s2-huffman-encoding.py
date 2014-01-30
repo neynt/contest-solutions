@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Read input
 code = {}
 for i in range(int(input())):

@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Counts the number of ways to reach the final hotel from
 # a certain starting hotel using recursion.
 def count_ways(start):
