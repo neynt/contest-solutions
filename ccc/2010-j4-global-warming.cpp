@@ -7,8 +7,14 @@ int main ()
     int temperature[30];
     int change[30];
 
-    do {
+    for(;;) {
         cin >> n;
+
+        if (n==0) break;
+        else if (n==1)
+        {
+            cout << "0" << endl;
+        }
 
         // Read in temperature values
         for (int i=0; i<n; i++)
@@ -43,5 +49,5 @@ int main ()
                 break;
             }
         }
-    } while (n > 0);
+    }
 }
