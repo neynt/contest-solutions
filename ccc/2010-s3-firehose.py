@@ -1,49 +1,51 @@
 #!/usr/bin/env python3
 
-# Get input
-num_houses = int(input())
-houses = [int(input()) for i in range(num_houses)]
-num_hydrants = int(input())
+STREET_LEN = 1000000
 
-# Sort the houses
+# Get input
+h = int(input())
+houses = [int(input()) for i in range(h)]
+k = int(input())
+
 houses.sort()
 
-# Takes the indices of two houses
-# and returns the distance between them
 def distance(h1, h2):
-    h1 %= num_houses
-    h2 %= num_houses
-    return min((houses[h1]-houses[h2]) % 1000000,
-               (houses[h2]-houses[h1]) % 1000000)
+    h1 %= h
+    h2 %= h
+    return min((houses[h1]-houses[h2]) % STREET_LEN,
+               (houses[h2]-houses[h1]) % STREET_LEN)
 
 # Keep track of the best hose length by far
-ultimate_answer = 500000
+best = 500000
 # Using each of the houses one by one as a "starting house"...
 for starting_house in range(len(houses)):
     # Do a binary search on the length of the hose
-    min_length = 0
-    max_length = 500000
-    while max_length - min_length > 0:
-        cur_length = (min_length + max_length) // 2
+    lo = 0
+    hi = 500000
+    while hi > lo:
+        mid = (lo + hi) // 2
         possible = True
-        cur_hose_house = starting_house
-        num_hoses = 1
-        for cur_house in range(starting_house, starting_house + num_houses):
-            if distance(cur_house, cur_hose_house) > 2*cur_length:
+
+        # i is the current starting house
+        i = starting_house
+        count = 1
+
+        # cur is the index of our current house
+        for cur in range(starting_house, starting_house + h):
+            if distance(cur, i) > 2*mid:
                 # cur_house cannot be reached by a hose half-way between it and cur_hose_house;
                 # start a new hose at cur_house
-                num_hoses += 1
-                cur_hose_house = cur_house
-                if num_hoses > num_hydrants:
+                count += 1
+                i = cur
+                if count > k:
                     possible = False;
                     break;
         if possible:
-            max_length = cur_length
+            hi = mid
         else:
-            min_length = cur_length + 1
+            lo = mid + 1
 
-    # Update the answer if we get a better one starting from the current starting house
-    ultimate_answer = min(min_length, ultimate_answer)
+    best = min(lo, best)
     
 # Finally, just output the answer!
-print(ultimate_answer)
+print(best)
