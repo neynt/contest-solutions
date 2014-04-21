@@ -4,6 +4,11 @@
 #include <vector>
 using namespace std;
 
+/* 2012 CCC Stage 2 Day 1 Problem 1: Choose Your Own Arithmetic
+ * 
+ * We use breadth-first-search, keeping track of the depth of each state,
+ * to populate a set of all the numbers that can be reached. */
+
 vector<int> digits;
 set<pair<int, int> > reached;
 set<int> possibru;

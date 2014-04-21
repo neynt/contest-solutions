@@ -5,6 +5,11 @@
 #include <limits.h>
 using namespace std;
 
+/* 2012 CCC Stage 2 Day 1 Problem 2: The Hungary Games
+ * 
+ * We use a modified Dijkstra's that keeps track of both the
+ * shortest and second shortest path to each node. */
+
 typedef pair<int, int> pack;
 
 // Graph of Budapest
